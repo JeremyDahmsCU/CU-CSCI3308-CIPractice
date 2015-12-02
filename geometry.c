@@ -36,6 +36,10 @@ double coord_2d_dist(const coord_2d_t* a, const coord_2d_t* b){
 
 }
 
+double coord_2d_area(const coord_2d_t* a, const coord_2d_t* b, const coord_2d_t* c){
+    return fabs(((a->x)*((b->y-c->y))+(b->x)*((c->y-a->y))+(c->x)*((a->y-b->y)))/2.0);
+}
+
 bool coord_2d_eq(const coord_2d_t* a, const coord_2d_t* b){
 
     /* Equal if dist <= FUZZY_EQ */
